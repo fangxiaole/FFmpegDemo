@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.jimi.ffmpegdemo">
+    package="com.jimi.ffmpegdemo"
+    android:sharedUserId="android.uid.system">
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <protected-broadcast android:name="android.intent.action.GSENSOR_RECORD_CRASH_EVENT" />
 
     <application
         android:allowBackup="true"

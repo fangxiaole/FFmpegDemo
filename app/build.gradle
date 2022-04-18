@@ -3,6 +3,22 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        debug {
+            // storeFile file('F:\\StudioWorkspace\\CameraDemo\\app\\signature\\sprd_release.jks')
+            storeFile file('D:\\code\\JimiCarRecorder427\\app\\signature\\sprd_release.jks')
+            storePassword '123456'
+            keyAlias = 'sprd_release'
+            keyPassword '123456'
+        }
+        release {
+            // storeFile file('C:\\Users\\Administrator\\Desktop\\JimiOrderCoreKitDemo\\app\\signature\\sprd_release.jks')
+            storeFile file('D:\\code\\JimiCarRecorder427\\app\\signature\\sprd_release.jks')
+            storePassword '123456'
+            keyPassword '123456'
+            keyAlias = 'sprd_release'
+        }
+    }
     compileSdkVersion 28
     buildToolsVersion "28.0.3"
 

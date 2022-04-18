@@ -20,10 +20,17 @@ public class FFmpegUtil {
     }
 
     public static String[] getCutCmd(String inputPath, String outPath, int startTime, int duration) {
-        String commd = "ffmpeg -i " + inputPath + " -vcodec copy -acodec copy -ss 00:00:10 -t 00:00:15 " + outPath + " -y";//可以实现
+        String commd = "ffmpeg -i " + inputPath + " -vcodec copy -acodec copy -ss " + startTime + " -t " + duration + " " + outPath + " -y";
         String[] cmds = commd.split(" ");
         return cmds;
     }
+
+    public static String[] getCutCmd(String inputPath, String outPath, int startTime) {
+        String commd = "ffmpeg -i " + inputPath + " -vcodec copy -acodec copy -ss " + startTime + " " + outPath + " -y";
+        String[] cmds = commd.split(" ");
+        return cmds;
+    }
+
 
     public static String[] getMergeCmd(ArrayList<String> inputLists, String outPath) {
 //        String path1 = PATH + File.separator + "2022_03_24_09_47_00_03.ts";
@@ -40,6 +47,7 @@ public class FFmpegUtil {
             }
         }
         stringBuffer.append(" -c copy ");
+        stringBuffer.append(outPath);
         String[] cmds2 = stringBuffer.toString().split(" ");
         return cmds2;
     }

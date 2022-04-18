@@ -93,7 +93,7 @@ public class FFmpegCmd {
      * FFmpeg执行结束回调，由C代码中调用
      */
     public static void onExecuted(int ret) {
-        Log.e("leleTest","onExecuted");
+        Log.e("leleTest","onExecuted ret="+ret);
         if (sOnCmdExecListener != null) {
             if (ret == 0) {
                 sOnCmdExecListener.onProgress(sDuration);
